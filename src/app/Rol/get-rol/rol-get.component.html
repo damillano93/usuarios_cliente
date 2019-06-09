@@ -1,0 +1,23 @@
+<h1> <i class="far fa-eye"></i> Ver Rol</h1>
+<table datatable class="table table-striped table-responsive-md btn-table">
+  <thead>
+  <tr>
+     <td>Nombre</td>
+ <td>Perfil</td>
+ <td>Permisos</td>
+
+    <td >Acciones</td>
+  </tr>
+  </thead>
+
+  <tbody>
+     
+           <tr *ngFor="let rol of rol">
+<td>{{ rol.nombre}}</td>
+<td>{{ rol.perfil}}</td>
+<td>{{ rol.permisos}}</td>
+<td><a [routerLink]="['edit', rol._id]" class="btn btn-primary"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a (click) = "deleteRol(rol._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+         
+      </tr>
+  </tbody>
+</table>

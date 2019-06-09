@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+
+<body>
+
+</body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark">
+  <a  sidebarjsToggle class="btn btn-light"><img width="30" height="30"src="assets/img/lineas.png"></a>
+  <h3 style="color:white;">  &nbsp; &nbsp; Usuarios</h3>
+ 
+</nav>
+
+
+
+<sidebarjs-element (changeVisibility)="onEvent($event)" (open)="onEvent($event)" (close)="onEvent($event)">
+
+  <a class="nav-link" href="/">Usuarios</a>
+
+
+   <div class="d-inline-block" ngbDropdown #myDropfacultad="ngbDropdown">
+<button class="btn btn-outline-primary btn-lg btn-block" id="dropdownManual2" ngbDropdownAnchor
+(focus)="myDropfacultad.open()">Facultad</button>
+<div ngbDropdownMenu aria-labelledby="dropdownManual">
+<a routerLink="facultad/create" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Crear Facultad
+</a>
+<a routerLink="facultad" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Ver Facultad
+</a>
+</div>
+</div>
+<div class="d-inline-block" ngbDropdown #myDroprol="ngbDropdown">
+<button class="btn btn-outline-primary btn-lg btn-block" id="dropdownManual2" ngbDropdownAnchor
+(focus)="myDroprol.open()">Rol</button>
+<div ngbDropdownMenu aria-labelledby="dropdownManual">
+<a routerLink="rol/create" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Crear Rol
+</a>
+<a routerLink="rol" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Ver Rol
+</a>
+</div>
+</div>
+<div class="d-inline-block" ngbDropdown #myDropprograma="ngbDropdown">
+<button class="btn btn-outline-primary btn-lg btn-block" id="dropdownManual2" ngbDropdownAnchor
+(focus)="myDropprograma.open()">Programa</button>
+<div ngbDropdownMenu aria-labelledby="dropdownManual">
+<a routerLink="programa/create" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Crear Programa
+</a>
+<a routerLink="programa" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Ver Programa
+</a>
+</div>
+</div>
+<div class="d-inline-block" ngbDropdown #myDropusuarios="ngbDropdown">
+<button class="btn btn-outline-primary btn-lg btn-block" id="dropdownManual2" ngbDropdownAnchor
+(focus)="myDropusuarios.open()">Usuarios</button>
+<div ngbDropdownMenu aria-labelledby="dropdownManual">
+<a routerLink="usuarios/create" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Crear Usuarios
+</a>
+<a routerLink="usuarios" class="nav-link" routerLinkActive="active" sidebarjsToggle>
+Ver Usuarios
+</a>
+</div>
+</div>
+
+
+
+  
+    <p></p>
+
+  <a><button class="btn btn-danger" sidebarjsToggle><img width="30" height="30"src="assets/img/close.png"></button></a>
+</sidebarjs-element>
+
+
+
+<br />
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

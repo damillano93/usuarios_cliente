@@ -1,0 +1,71 @@
+<h1> <i class="far fa-plus-square"></i> Crear Usuarios</h1>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+     <div class="form-group">
+<label class="col-md-4">Nombre</label>
+<input type="text" class="form-control" formControlName="nombre" #nombre/>
+</div>
+<div *ngIf="angForm.controls['nombre'].invalid && (angForm.controls['nombre'].dirty || angForm.controls['nombre'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['nombre'].errors.required">
+Nombre es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Codigo_usuario</label>
+<input type="text" class="form-control" formControlName="codigo_usuario" #codigo_usuario/>
+</div>
+<div *ngIf="angForm.controls['codigo_usuario'].invalid && (angForm.controls['codigo_usuario'].dirty || angForm.controls['codigo_usuario'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['codigo_usuario'].errors.required">
+Codigo_usuario es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Email</label>
+<input type="text" class="form-control" formControlName="email" #email/>
+</div>
+<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['email'].errors.required">
+Email es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Programa</label>
+<select class="form-control" formControlName="programa" #programa >
+<option  [value]="programa._id" *ngFor="let programa of Programa" >{{programa.nombre}}</option>
+</select>
+</div>
+<div *ngIf="angForm.controls['programa'].invalid && (angForm.controls['programa'].dirty || angForm.controls['programa'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['programa'].errors.required">
+Programa es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Rol</label>
+<select class="form-control" formControlName="rol" #rol >
+<option  [value]="rol._id" *ngFor="let rol of Rol" >{{rol.nombre}}</option>
+</select>
+</div>
+<div *ngIf="angForm.controls['rol'].invalid && (angForm.controls['rol'].dirty || angForm.controls['rol'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['rol'].errors.required">
+Rol es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Estado</label>
+<input type="text" class="form-control" formControlName="estado" #estado/>
+</div>
+<div *ngIf="angForm.controls['estado'].invalid && (angForm.controls['estado'].dirty || angForm.controls['estado'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['estado'].errors.required">
+Estado es requerido.
+</div>
+</div>
+<div class="form-group">
+    <button (click)="addUsuarios(nombre.value, codigo_usuario.value, email.value, programa.value, rol.value, estado.value)"
+    [disabled]="angForm.pristine || angForm.invalid"
+    class="btn btn-primary">Crear Usuarios</button>
+  </div>
+
+    </form>
+  </div>
+</div>

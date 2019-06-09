@@ -1,0 +1,21 @@
+<h1> <i class="far fa-eye"></i> Ver Programa</h1>
+<table datatable class="table table-striped table-responsive-md btn-table">
+  <thead>
+  <tr>
+     <td>Nombre</td>
+ <td>Facultad</td>
+
+    <td >Acciones</td>
+  </tr>
+  </thead>
+
+  <tbody>
+     
+           <tr *ngFor="let programa of programa">
+<td>{{ programa.nombre}}</td>
+<td>{{ programa.facultad.nombre}}</td>
+<td><a [routerLink]="['edit', programa._id]" class="btn btn-primary"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a (click) = "deletePrograma(programa._id)" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+         
+      </tr>
+  </tbody>
+</table>

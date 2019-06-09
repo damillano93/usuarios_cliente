@@ -1,0 +1,40 @@
+<h1> <i class="far fa-plus-square"></i> Crear Rol</h1>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+     <div class="form-group">
+<label class="col-md-4">Nombre</label>
+<input type="text" class="form-control" formControlName="nombre" #nombre/>
+</div>
+<div *ngIf="angForm.controls['nombre'].invalid && (angForm.controls['nombre'].dirty || angForm.controls['nombre'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['nombre'].errors.required">
+Nombre es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Perfil</label>
+<input type="text" class="form-control" formControlName="perfil" #perfil/>
+</div>
+<div *ngIf="angForm.controls['perfil'].invalid && (angForm.controls['perfil'].dirty || angForm.controls['perfil'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['perfil'].errors.required">
+Perfil es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Permisos</label>
+<input type="text" class="form-control" formControlName="permisos" #permisos/>
+</div>
+<div *ngIf="angForm.controls['permisos'].invalid && (angForm.controls['permisos'].dirty || angForm.controls['permisos'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['permisos'].errors.required">
+Permisos es requerido.
+</div>
+</div>
+<div class="form-group">
+    <button (click)="addRol(nombre.value, perfil.value, permisos.value)"
+    [disabled]="angForm.pristine || angForm.invalid"
+    class="btn btn-primary">Crear Rol</button>
+  </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h1> <i class="far fa-plus-square"></i> Crear Facultad</h1>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+     <div class="form-group">
+<label class="col-md-4">Nombre</label>
+<input type="text" class="form-control" formControlName="nombre" #nombre/>
+</div>
+<div *ngIf="angForm.controls['nombre'].invalid && (angForm.controls['nombre'].dirty || angForm.controls['nombre'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['nombre'].errors.required">
+Nombre es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Ubicacion</label>
+<input type="text" class="form-control" formControlName="ubicacion" #ubicacion/>
+</div>
+<div *ngIf="angForm.controls['ubicacion'].invalid && (angForm.controls['ubicacion'].dirty || angForm.controls['ubicacion'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['ubicacion'].errors.required">
+Ubicacion es requerido.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Descripcion</label>
+<input type="text" class="form-control" formControlName="descripcion" #descripcion/>
+</div>
+<div *ngIf="angForm.controls['descripcion'].invalid && (angForm.controls['descripcion'].dirty || angForm.controls['descripcion'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['descripcion'].errors.required">
+Descripcion es requerido.
+</div>
+</div>
+<div class="form-group">
+    <button (click)="addFacultad(nombre.value, ubicacion.value, descripcion.value)"
+    [disabled]="angForm.pristine || angForm.invalid"
+    class="btn btn-primary">Crear Facultad</button>
+  </div>
+
+    </form>
+  </div>
+</div>
